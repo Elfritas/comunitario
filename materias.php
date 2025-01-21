@@ -149,6 +149,7 @@ $materias = $stmt_materias->fetchAll(PDO::FETCH_ASSOC);
                                     <tr>
                                         <th scope="col">Curso</th>
                                         <th scope="col">Materia</th>
+                                         <th scope="col">Eliminar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -156,7 +157,7 @@ $materias = $stmt_materias->fetchAll(PDO::FETCH_ASSOC);
                             <tr>
                              <td><?php echo htmlspecialchars($materia['nombre_curso']); ?></td>
                                 <td><?php echo htmlspecialchars($materia['nombre_materia']); ?></td>
-                                
+                                <td> <button type="button" class="btn"> <img src="assets/img/delete.jpg"style="width: 30px; height: 30px;"></button></td>
                             </tr>
                         <?php endforeach; ?>
                                 </tbody>
