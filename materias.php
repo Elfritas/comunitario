@@ -76,7 +76,7 @@ $materias = $stmt_materias->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../assets/img/logo1.webp">
-    <title>Listado de Representantes</title>
+    <title>Listado de Materias</title>
     <!-- Favicon -->
     <link href="assets/img/logo1.webp" rel="icon">
    <!-- Libraries Stylesheet -->
