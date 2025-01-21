@@ -1,11 +1,15 @@
-body {
+*{
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
+}
+
+body {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     height: 100vh;
+    background-image: url(../img/fondo.jpg);
+    background-size: cover;
 }
 
 .login-container {
