@@ -1,88 +1,146 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['user_tipo'] !== 'coordinador') {
-    header('Location: index.html');
+    header('Location: index.php');
     exit;
 }
 ?>
-
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assets/img/logo1.webp">
-    <title>Panel Profesor</title>
-    <link rel="stylesheet" href="./assets/css/dashboard.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-<body>
-    <div class="dashboard">
-        <!-- Menú lateral -->
-        <nav class="sidebar">
-            <h2>Liceo Nacional Simón Bolívar</h2>
-            <ul>
-                <li><a href="./Estudiantes/estudiantes.html">Estudiantes</a></li>
-                <li><a href="./Curso/cursos.php">Cursos</a></li>
-                <li><a href="./Materias/materias.php">Materia</a></li>
-                <li><a href="#">Materia Aplazada</a></li>
-                <li><a href="./Talento/agregar_talento.php">Talento</a></li>
-                <li><a href="#">Documentos</a></li>
-                <li><a href="./Representantes/agregar_representante.php">Representantes</a></li>
-                <li><a href="#">Usuarios</a></li>
-                <li><a href="logout.php" class="logout">Cerrar sesión</a></li>
-            </ul>
-        </nav>
+<html lang="en">
 
-        <!-- Contenido principal -->
-        <div class="main-content">
-        <h1 style="display: inline-block; vertical-align: middle;">Bienvenido <?php echo htmlspecialchars($_SESSION['user_nombre']); ?></h1>
-        <div class="user-profile" style="display: inline-block; vertical-align: middle; margin-left: 700px;">
-            <img src="./assets/img/coordinador.webp" alt="Foto de Usuario" class="user-photo" style="width: 65px; height: 65px; border-radius: 50%;">
+<head>
+    <meta charset="utf-8">
+    <title>Inicio</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+   <!-- Favicon -->
+   <link href="assets/img/logo1.webp" rel="icon">
+   <!-- Libraries Stylesheet -->
+   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+   <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+   <!-- Customized Bootstrap Stylesheet -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Template Stylesheet -->
+   <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl position-relative bg-white d-flex p-0">
+       <?php 
+        include 'menu/nav.php';
+       ?>
+        <div class="content">
+             <?php  include 'menu/side.php';?>
+            
+            <!-- Sale & Revenue Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <img src="assets/img/est4.png" style="width: 60px; height: 60px;">
+                            <div class="ms-3">
+                                <p class="mb-2">Estudiantes Activos</p>
+                                <h6 class="mb-0">0</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                        <img src="assets/img/est1.png" style="width: 60px; height: 60px;">
+                            <div class="ms-3">
+                                <p class="mb-2">Nuevo Ingreso</p>
+                                <h6 class="mb-0">0</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                        <img src="assets/img/est3.png" style="width: 50px; height: 50px;">
+                            <div class="ms-3">
+                                <p class="mb-2">Pendientes por Documentación</p>
+                                <h6 class="mb-0">0</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                        <img src="assets/img/est2.png" style="width: 60px; height: 60px;">
+                            <div class="ms-3">
+                                <p class="mb-2">Promedio General</p>
+                                <h6 class="mb-0">0</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sale & Revenue End -->
+
+
+            <!-- Sales Chart Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light text-center rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">Nuevos Ingresos</h6>
+                            </div>
+                            <canvas id="worldwide-sales"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light text-center rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">Promedio por Año</h6>
+                            </div>
+                            <canvas id="salse-revenue"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sales Chart End -->
+
+            <!-- Footer Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-light rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            &copy; <a href="#">Liceo Nacional Simón Bolívar</a>
+                        </div>
+                        <div class="col-12 col-sm-6 text-center text-sm-end">
+                           
+                            Diseñado y Desarrollado por el equipo E05-SIST-02-2024 del Servicio comunitario de la Unefa
+                        </br>
+                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
         </div>
-        <!-- Cards arriba -->
-        <div class="card-deck" style="display: flex; justify-content: space-between; padding: 5%;">
-            <div class="card" style="width: 22rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-            <div class="card" style="width: 22rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-            <div class="card" style="width: 22rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-            </div>
-            <!-- Grafica abajo -->
-            <div class="card" style="width: 62rem; margin: 20px auto;">
-                <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-        </div>
-        </div>
+        <!-- Content End -->
+
+
+       
     </div>
-    <script src="dashboard.js"></script>
+
+  
+     <!-- JavaScript Libraries -->
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="lib/chart/chart.min.js"></script>
+     <script src="lib/easing/easing.min.js"></script>
+     <script src="lib/waypoints/waypoints.min.js"></script>
+     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+     <script src="lib/tempusdominus/js/moment.min.js"></script>
+     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+ 
+     <!-- Template Javascript -->
+     <script src="js/main.js"></script>
 </body>
+
 </html>
