@@ -37,7 +37,6 @@
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="agregar_talento.php" class="dropdown-item">Habilidades</a>
                             <a href="blank.html" class="dropdown-item">Materias</a>
-                            <a href="blank.html" class="dropdown-item">Curso</a>
                             <a href="blank.html" class="dropdown-item">Usuarios</a>
                         </div>
                     </div>
