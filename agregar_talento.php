@@ -88,6 +88,7 @@ $talentos = $stmt_listar->fetchAll(PDO::FETCH_ASSOC);
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Habilidad</th>
+                                         <th scope="col">Eliminar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -96,6 +97,7 @@ $talentos = $stmt_listar->fetchAll(PDO::FETCH_ASSOC);
                                             <tr>
                                                 <td><?php echo $talento['id']; ?></td>
                                                 <td><?php echo htmlspecialchars($talento['nombre_talento']); ?></td>
+                                                <td> <button type="button" class="btn"> <img src="assets/img/delete.jpg"style="width: 30px; height: 30px;"></button></td>
                                             </tr>
                                         <?php endforeach; ?>
                                     <?php else : ?>
