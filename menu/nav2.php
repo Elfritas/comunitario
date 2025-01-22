@@ -27,7 +27,7 @@
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="formulario/formulario.php" class="dropdown-item">Nuevo ingreso</a>
                             <a href="activ.php" class="dropdown-item">Estudiantes Inscritos</a>
-                            <a href=" " class="dropdown-item">Retirados</a>
+                            <a href="retirados.php" class="dropdown-item">Retirados</a>
                             <a href="representantes.php" class="dropdown-item">Representantes</a>
                             <a href="" class="dropdown-item">Sabana de Notas</a>
                         </div>
