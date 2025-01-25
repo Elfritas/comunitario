@@ -39,27 +39,46 @@ include 'conexion.php';
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th scope="col">C.I. Hijo</th>
                                                     <th scope="col">C.I.</th>
+                                                    <th scope="col">C.I. Estudiante</th>
                                                     <th scope="col">Apellidos</th>
                                                     <th scope="col">Nombres</th>
-                                                    <th scope="col">Contacto</th>
+                                                    <th scope="col">Nº Contacto</th>
                                                     <th scope="col">Correo</th>
                                                     <th scope="col">Editar</th>
-                                                    <th scope="col">Eliminar</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <th scope="row">1</th>
-                                                    <th>1</th>
-                                                    <td>John</td>
-                                                    <td>Doe</td>
-                                                    <td>jhon@email.com</td>
-                                                    <td>USA</td>
-                                                    <td><button type="button" class="btn"> <img src="assets/img/edit.jpg" style="width: 30px; height: 30px;"></button></td>
-                                                    <td> <button type="button" class="btn"> <img src="assets/img/delete.jpg"style="width: 30px; height: 30px;"></button></td>
-                                                </tr>
+                                                    <th scope="row">16.567.349</th>
+                                                    <th>33.163.234</th>
+                                                    <td>Marquez</td>
+                                                    <td>Ricardo</td>
+                                                    <td>0412-0347923</td>
+                                                    <td>m@gmai.com</td>
+                                                    <td> <button type="button" class="btn  open-button"  id="open-button"><img src="assets/img/edit.jpg" style="width: 30px; height: 30px;"></button></td>
+
+                                                    <div class="window-back" id="window-back">
+                                                    <div class="window-container" id="window-container">
+                                                        <button type="button" class="btn btn-primary rounded-pill m-2 close-button"  id="close-button" >Salir</button>
+                                                        
+                                                        <label for="floatingInput">Apellidos y Nombres</label>
+                                                       <div class="d-flex mb-2">
+                                                            <input type="text" class="form-control" id="floatingInput"placeholder="Marquez">
+                                                            
+                                                            <input type="text" class="form-control" id="floatingInput"placeholder="Daniel" style=" margin-left: 20px">
+                                                       </div>
+<br>
+                                                       <label for="floatingInput">Teléfono de Contacto</label>
+                                                       <input type="text" class="form-control" id="floatingInput"placeholder="0412-0347923">
+                                                       <br>
+                                                       <label for="floatingInput">Correo Electrónico</label>
+                                                       <input type="text" class="form-control" id="floatingInput"placeholder="m@gmai.com">
+                                                       <br><button type="button" class="btn btn-primary ms-2" style=" height: 35px;">Guardar </button>
+                                                       
+                                                       </div>  
+                                                    </div>
+                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -79,6 +98,8 @@ include 'conexion.php';
             </div>
         </div>
     </div>
+    
+    <script src="js/ventana.js"></script>
        <!-- JavaScript Libraries -->
        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
