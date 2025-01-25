@@ -63,6 +63,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_tipo'] !== 'profesor') {
                             <div class="ms-3">
                                 <p class="mb-2">Pendientes por Documentación</p>
                                 <h6 class="mb-0">0</h6>
+                                <a href="pendientes.php">Ver</a>
                             </div>
                         </div>
                     </div>
@@ -70,8 +71,10 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_tipo'] !== 'profesor') {
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                         <img src="assets/img/est2.png" style="width: 60px; height: 60px;">
                             <div class="ms-3">
-                                <p class="mb-2">Promedio General</p>
+                                <p class="mb-2">Estudiantes por Sección</p>
                                 <h6 class="mb-0">0</h6>
+                                
+                                <a href="">Ver más</a>
                             </div>
                         </div>
                     </div>
@@ -91,12 +94,13 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_tipo'] !== 'profesor') {
                             <canvas id="worldwide-sales"></canvas>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light text-center rounded p-4">
+                    
+                    <div class="col-sm-12 col-md-6 col-xl-4">
+                        <div class="h-100 bg-light rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Promedio por Año</h6>
+                                <h6 class="mb-0">Calender</h6>
                             </div>
-                            <canvas id="salse-revenue"></canvas>
+                            <div id="calender"></div>
                         </div>
                     </div>
                 </div>
@@ -112,7 +116,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_tipo'] !== 'profesor') {
                         </div>
                         <div class="col-12 col-sm-6 text-center text-sm-end">
                            
-                            Diseñado y Desarrollado por Estudiantes de la UNEFA 
+                            Diseñado y Desarrollado por el equipo E05-SIST-02-2024 del Servicio comunitario de la Unefa
                         </br>
                        
                         </div>
