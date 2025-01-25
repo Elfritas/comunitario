@@ -21,11 +21,7 @@
                         </li>
                         <li class="step ">
                             <span class="num"></span>
-                            <p>Adicional <br><span>25 secs to complete</span></p>
-                        </li>
-                        <li class="step">
-                            <span></span>
-                            <p>Académicos<br><span>25 secs to complete</span></p>
+                            <p>Adicional<br><span>25 secs to complete</span></p>
                         </li>
                         <li class="step">
                             <span></span>
@@ -48,7 +44,7 @@
                             <label>Nombres</label>
                             <input id="" name="" type="text" placeholder="Emilia Alejandra"> 
                         </div>
-                        <div>
+                        <div> 
                             <label>Cédula de Identidad</label>
                             <input  id="" type="text" name="" placeholder="00.000.000">  
                         </div>
@@ -63,7 +59,7 @@
                     </div>
                     <div class="two form-step">
                         <div class="bg-svg"></div>
-                        <h2>Información Adicional</h2>
+                        <h2>Información Adicional y Académica</h2>
                         <div>
                             <label>Tipo de Sangre</label>
                             <input id="" name="" type="text" placeholder="O+">
@@ -72,19 +68,7 @@
                             <label>¿Es alergico a algún alimento? Y si es así favor indicar a cuál</label>
                             <input id="" name="" type="text" placeholder="">
                         </div>
-                    </div>
-
-                    <div class="three form-step">
-                        <div class="bg-svg"></div>
-                        <h2>Información Requerida</h2>
-                        <div>
-                            <label>Condición del Estudiante</label>
-                            <select  id="" name="" required>
-                                <option value="">Regular</option>
-                                <option value="">Materia pendiente</option>
-                                <option value="">Repitiente</option>
-                            </select>
-                        </div>
+                        
                         <div>
                             <label>Año a Cursar</label>
                             <select  id="" name="" name="" required>
@@ -107,8 +91,8 @@
                             <option value="">U</option>
                             </select>
                         </div>
-                        
                     </div>
+
 
                     <div class="four form-step">
                             <div class="bg-svg"></div>
