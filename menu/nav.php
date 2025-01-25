@@ -29,14 +29,13 @@
                             <a href="activ.php" class="dropdown-item">Estudiantes Inscritos</a>
                             <a href="retirados.php" class="dropdown-item">Retirados</a>
                             <a href="representantes.php" class="dropdown-item">Representantes</a>
-                            <a href="" class="dropdown-item">Sabana de Notas</a>
+                            <a href="est_documentacion.php" class="dropdown-item">Revisión de Expedientes</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link " data-bs-toggle="dropdown"><img src="assets/img/archivo.jpg" style="width: 25px; height: 25px; border-radius: 50%"> Configurar</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="agregar_talento.php" class="dropdown-item">Habilidades</a>
-                            <a href="materias.php" class="dropdown-item">Materias</a>
                             <a href="usuarios.php" class="dropdown-item">Usuarios</a>
                         </div>
                     </div>
