@@ -57,7 +57,7 @@
                             <div class="ms-3">
                                 <p class="mb-2">Pendientes por Documentación</p>
                                 <h6 class="mb-0">0</h6>
-                            <a href="pendientes.php">Ver</a>
+                            <a href="est_documentacion.php">Ver</a>
                             </div>
                         </div>
                     </div>
