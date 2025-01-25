@@ -64,28 +64,54 @@
                                                     <th scope="col">Apellidos</th>
                                                     <th scope="col">Nombres</th>
                                                     <th scope="col">Edad</th>
-                                                    <th scope="col">Género</th>
                                                     <th scope="col">Status</th>
-                                                    <th scope="col">Habilidad</th>
                                                     <th scope="col">Año</th>
                                                     <th scope="col">Sección</th>
+                                                    <th scope="col">Datos Adicionales</th>
                                                     <th scope="col">Editar</th>
-                                                    <th scope="col">Eliminar</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>mark@email.com</td>
-                                                    <td>UK</td>
-                                                    <td>456</td>
-                                                    <td>Member</td>
-                                                    <td>Member</td>
-                                                    <td>Member</td>
-                                                    <td><button type="button" class="btn"> <img src="assets/img/edit.jpg" style="width: 30px; height: 30px;"></button></td>
-                                                    <td> <button type="button" class="btn"> <img src="assets/img/delete.jpg"style="width: 30px; height: 30px;"></button></td>
+                                                    <th scope="row">33.163.234</th>
+                                                    <td>Marquez</td>
+                                                    <td>Daniel</td>
+                                                    <td>15</td>
+                                                    <td>Est. Regular</td>
+                                                    <td>5</td>
+                                                    <td>A</td>
+                                                    <th scope="col"><button type="button" class="btn btn-primary rounded-pill m-2 "  >Ver</button>
+                                                    
+                                                    <td>
+
+                                                    <button type="button" class="btn  open-button"  id="open-button"><img src="assets/img/edit.jpg" style="width: 30px; height: 30px;"></button></td>
+
+                                                    <div class="window-back" id="window-back">
+                                                    <div class="window-container" id="window-container">
+                                                        <button type="button" class="btn btn-primary rounded-pill m-2 close-button"  id="close-button" >Salir</button>
+                                                        
+                                                        <label for="floatingInput">Apellidos y Nombres</label>
+                                                       <div class="d-flex mb-2">
+                                                            <input type="text" class="form-control" id="floatingInput"placeholder="Marquez">
+                                                            
+                                                            <input type="text" class="form-control" id="floatingInput"placeholder="Daniel" style=" margin-left: 20px">
+                                                       </div>
+
+                                                       
+                                                       <label for="floatingInput">Status, Año y Sección</label>
+                                                       <div class="d-flex mb-2">
+                                                            <input type="text" class="form-control" id="floatingInput"placeholder="Regular" style="width: 80px;">
+                                                            
+                                                            <input type="text" class="form-control" id="floatingInput"placeholder="5" style="width: 80px; margin-left: 20px">
+
+                                                            <input type="text" class="form-control" id="floatingInput"placeholder="A" style="width: 80px; margin-left: 20px">
+                                                       </div>
+                                                       <button type="button" class="btn btn-primary ms-2" style=" height: 35px;">Guardar </button>
+                                                       
+                                                       </div>  
+                                                    </div>
+
+                                                   
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -109,6 +135,7 @@
          
     </div>
   
+    <script src="js/ventana.js"></script>
      <!-- JavaScript Libraries -->
      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
