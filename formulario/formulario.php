@@ -1,62 +1,3 @@
-<?php
-// Conexión a la base de datos
-include 'conexion.php';
-// Manejo del formulario (POST)
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $telefono = $_POST['telefono'];
-    $correo = $_POST['correo'];
-    $documento_identidad = $_POST['documento_identidad'];
-    $foto_documento = isset($_FILES['foto_documento']) ? $_FILES['foto_documento'] : null;
-
-    // Validación básica
-    if (empty($nombre) || empty($apellido) || empty($telefono) || empty($documento_identidad)) {
-        $mensaje = "Todos los campos son obligatorios.";
-    } else {
-        // Verificar si el documento de identidad ya existe
-        $sql = "SELECT COUNT(*) FROM representantes WHERE documento_identidad = :documento_identidad";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([':documento_identidad' => $documento_identidad]);
-        $count = $stmt->fetchColumn();
-
-        if ($count > 0) {
-            $mensaje = "El documento de identidad ya está registrado.";
-        } else {
-            // Manejo del archivo de la foto del documento, si existe
-            $ruta_destino = null;
-            if ($foto_documento && $foto_documento['error'] == UPLOAD_ERR_OK) {
-                $nombre_archivo = basename($foto_documento['name']);
-                $ruta_destino = "../uploads/" . $nombre_archivo;
-                move_uploaded_file($foto_documento['tmp_name'], $ruta_destino);
-            }
-
-            // Inserción en la base de datos
-            try {
-                $sql = "INSERT INTO representantes (cedula, nombre, apellido, telefono, correo, documento_identidad, foto_documento) 
-                        VALUES (:cedula, :nombre, :apellido, :telefono, :correo, :documento_identidad, :foto_documento)";
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute([
-                    ':cedula' => $documento_identidad,
-                    ':nombre' => $nombre,
-                    ':apellido' => $apellido,
-                    ':telefono' => $telefono,
-                    ':correo' => $correo,
-                    ':documento_identidad' => $documento_identidad,
-                    ':foto_documento' => $ruta_destino
-                ]);
-                $mensaje = "Representante agregado exitosamente.";
-            } catch (PDOException $e) {
-                if ($e->getCode() == 23000) { // Código de error para violación de restricción de unicidad
-                    $mensaje = "El documento de identidad ya está registrado.";
-                } else {
-                    $mensaje = "Error al agregar el representante: " . $e->getMessage();
-                }
-            }
-        }
-    }
-}
-?>
 
 
 <!DOCTYPE html>
@@ -80,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </li>
                         <li class="step ">
                             <span class="num"></span>
-                            <p>Emergencia <br><span>25 secs to complete</span></p>
+                            <p>Adicional <br><span>25 secs to complete</span></p>
                         </li>
                         <li class="step">
                             <span></span>
@@ -111,20 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <label>Cédula de Identidad</label>
                             <input  id="" type="text" name="" placeholder="00.000.000">  
                         </div>
-                        <div>
-                            <label>Nacionalidad</label>
-                            <select  id="" name="" required>
-                                <option value="Venezolano">Venezolano</option>
-                                <option value="Extranjero">Extranjero</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label>Género</label>
-                            <select  id="" name="" required>
-                                <option value="F">Femenino</option>
-                                <option value="M">Masculino</option>
-                            </select>
-                        </div>
                         <div class="birth">
                             <label>Fecha de Nacimiento</label>
                             <div class="grouping">
@@ -136,11 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                     <div class="two form-step">
                         <div class="bg-svg"></div>
-                        <h2>Información de Emergencia</h2>
-                        <div>
-                            <label>Teléfono de contacto</label>
-                            <input id="" name="" type="text" placeholder="0412-1111111">
-                        </div>
+                        <h2>Información Adicional</h2>
                         <div>
                             <label>Tipo de Sangre</label>
                             <input id="" name="" type="text" placeholder="O+">
@@ -184,12 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <option value="">U</option>
                             </select>
                         </div>
-                        <div>
-                            <label>Habilidad</label>
-                                <select  id="" name="" required>
-                                <option value="">A</option>
-                                </select>
-                            </div>
+                        
                     </div>
 
                     <div class="four form-step">
@@ -248,7 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="btn">
                         <button type="button" class="btn back" id="muestra" disabled>Anterior</button>
                         <button type="button" class="btn siguiente" id="muestra">Siguiente</button>
-                        <button type="submit" class="btn sub" id="muestra"><a href="adm.php">Enviar</a></button>
+                        <button type="submit" class="btn sub" id="muestra"><a href="../dashboard_coordinador.php">Enviar</a></button>
                     </div>
                 </form>
                 </div>
